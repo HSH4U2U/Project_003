@@ -58,6 +58,8 @@ INSTALLED_APPS = [
     'accounts',
     'notice_uos',
     'django_apscheduler',
+    'schedule_google',
+    'googleapiclient',
 ]
 
 MIDDLEWARE = [
