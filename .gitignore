@@ -233,6 +233,7 @@ venv.bak/
 
 # Secret Key
 secrets.json
+credentials.json
 createsu.py
 
 # DATABASE

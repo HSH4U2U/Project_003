@@ -35,8 +35,8 @@ def get_secret(setting, secrets=secrets):
 EMAIL_HOST_USER = get_secret("EMAIL_HOST_USER")
 
 
-def send_email(title, message, receiver_list):
-    send_mail(title, message, EMAIL_HOST_USER, receiver_list, fail_silently=False)
+def send_email(notice, receiver_list):
+    send_mail(notice.tags + notice.title, notice.url, EMAIL_HOST_USER, receiver_list, fail_silently=False)
 
 
 # telegram 보내기
@@ -44,6 +44,6 @@ TELEGRAM_TOKEN = get_secret("TELEGRAM_TOKEN")
 bot = telegram.Bot(token=TELEGRAM_TOKEN)
 
 
-def send_telegram(title, message, chat_id):
-    text = str(title) + "\n" + str(message)
+def send_telegram(notice, chat_id):
+    text = str(notice.tags) + "\n" + str(notice.title) + "\n" + str(notice.url)
     bot.sendMessage(chat_id=chat_id, text=text)

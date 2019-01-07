@@ -2,3 +2,5 @@ beautifulsoup4 == 4.6.3
 django-apscheduler == 0.2.13
 fbchat == 1.4.2
 python-telegram-bot == 11.1.0
+google-api-python-client == 1.7.7
+oauth2client == 4.1.3
